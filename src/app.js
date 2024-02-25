@@ -15,4 +15,13 @@ app.use(express.static("public")); // middleware use for file, pdf, image etc fo
 app.use(cookieParser()) // use for talking to cookies from server 
 
 
-export {app}
+//routes import
+import userRouter from "./routers/user.routes.js"
+
+
+//routes declaration
+//http://localhost:3000 /api/v1/users/register
+app.use("/api/v1/users",userRouter);
+
+
+export default app
